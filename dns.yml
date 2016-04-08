@@ -1,0 +1,13 @@
+version: '2'
+
+networks:
+  ext_network:
+    external:
+      name: ${NETWORK_NAME}
+
+services:  
+  devdns:
+    container_name: ${NETWORK_NAME}_devdns
+    build: devdns
+    networks:
+      - ext_network
